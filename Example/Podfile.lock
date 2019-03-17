@@ -1,0 +1,27 @@
+PODS:
+  - AlipaySDK-iOS (15.5.9)
+  - JKAliPayHelper (0.1.0):
+    - AlipaySDK-iOS
+  - Kiwi (3.0.0)
+
+DEPENDENCIES:
+  - JKAliPayHelper (from `../`)
+  - Kiwi
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AlipaySDK-iOS
+    - Kiwi
+
+EXTERNAL SOURCES:
+  JKAliPayHelper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AlipaySDK-iOS: 1c5283b30977a24acecc0114662697f7dc78f618
+  JKAliPayHelper: fe85affc56c174f4d637a14efa547a43fd102a31
+  Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
+
+PODFILE CHECKSUM: 24cb6cb72f25d3c400fb04761e854f352b05acc7
+
+COCOAPODS: 1.5.3
