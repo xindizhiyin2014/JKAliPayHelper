@@ -85,9 +85,13 @@ static JKAliPayHelper *_helper = nil;
     [[AlipaySDK defaultService] payOrder:orderString dynamicLaunch:dynamicLaunch fromScheme:[JKAliPayHelper shareInstance].appScheme callback:nil];
 }
 
++ (void)cleanBlock{
+    [JKAliPayHelper shareInstance].resultBlock = nil;
+}
 + (void)handleURL:(NSURL *)url{
     [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
         [JKAliPayHelper shareInstance].resultBlock(resultDic);
+        [JKAliPayHelper cleanBlock];
     }];
 }
 
