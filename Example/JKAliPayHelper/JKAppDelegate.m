@@ -7,13 +7,33 @@
 //
 
 #import "JKAppDelegate.h"
-
+#import <JKAliPayHelper/JKAliPayHelper.h>
 @implementation JKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options{
+    if ([url.host isEqualToString:@"safepay"]) {
+        //跳转支付宝钱包进行支付，处理支付结果
+        [JKAliPayHelper handleURL:url];
+        return YES;
+    } else{
+        return NO;
+    }
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([url.host isEqualToString:@"safepay"]) {
+        //跳转支付宝钱包进行支付，处理支付结果
+       [JKAliPayHelper handleURL:url];
+        return YES;
+    }else{
+        return NO;
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -10,6 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JKAliPayHelper : NSObject
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
 + (instancetype)shareInstance;
 
 + (void)conifgAppScheme:(NSString *)appScheme;
